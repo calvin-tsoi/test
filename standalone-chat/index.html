@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Standalone AI Chat</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>AI Chat</h1>
+            <div class="auth-section">
+                <input type="text" id="token-input" placeholder="Enter your API token" autocomplete="off" />
+                <button type="button" id="save-token-btn">Save Token</button>
+                <span id="token-status" class="status"></span>
+            </div>
+        </header>
+
+        <div class="chat-container">
+            <div class="sidebar">
+                <div class="sidebar-header">
+                    <h3>Chat History</h3>
+                    <button type="button" id="new-chat-btn">+ New Chat</button>
+                </div>
+                <div id="chat-list" class="chat-list"></div>
+            </div>
+
+            <div class="main-chat">
+                <div id="messages-container" class="messages-container"></div>
+                
+                <div class="input-container">
+                    <div class="model-selector">
+                        <select id="model-select">
+                            <option value="">Loading models...</option>
+                        </select>
+                    </div>
+                    <div class="message-input-wrapper">
+                        <textarea id="message-input" placeholder="Type your message..." rows="1" autocomplete="off"></textarea>
+                        <button type="button" id="send-btn" class="send-button" style="
+                            background: #007bff; 
+                            color: white; 
+                            border: none; 
+                            padding: 8px 12px; 
+                            border-radius: 4px; 
+                            cursor: pointer; 
+                            display: inline-flex; 
+                            align-items: center; 
+                            opacity: 0.5;
+                        ">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <line x1="22" y1="2" x2="11" y2="13"></line>
+                                <polygon points="22,2 15,22 11,13 2,9"></polygon>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="db.js"></script>
+    <script src="api.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
